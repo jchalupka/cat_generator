@@ -4,15 +4,13 @@ const fetch = require('node-fetch');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // const result = fetch('http://theoldreader.com/kittens/600/400/');
-  // result
-  //   .then(catResponse => catResponse.buffer())
-  //   .then(buf => {
-  //     res.write(buf);
-  //     res.end()
-  //   });
-  res.write('helloworld');
-  res.end();
+  const result = fetch('http://theoldreader.com/kittens/600/400/');
+  result
+    .then(catResponse => catResponse.buffer())
+    .then(buf => {
+      res.write(buf);
+      res.end()
+    });
 });
 
 module.exports = router;
